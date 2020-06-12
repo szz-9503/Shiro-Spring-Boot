@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.szz.shirospringboot.mapper.UserMapper">
+    <sql id="base_column">username,password,id,perms</sql>
+    <select id="queryUserByName" parameterType="String" resultType="User">
+        select <include refid="base_column"/> from mybatis.user where `username` = #{name}
+    </select>
+</mapper>
